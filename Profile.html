@@ -1,0 +1,109 @@
+
+
+    <head>
+        <title>>COMPUTER AND INFORMATION SCIENCE U PENN</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--===============================================================================================-->	
+        <link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
+    <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+    <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+    <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="fonts/iconic/css/material-design-iconic-font.min.css">
+    <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
+    <!--===============================================================================================-->	
+        <link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
+    <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="vendor/animsition/css/animsition.min.css">
+    <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
+    <!--===============================================================================================-->	
+        <link rel="stylesheet" type="text/css" href="vendor/daterangepicker/daterangepicker.css">
+    <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="css/util.css">
+        <link rel="stylesheet" type="text/css" href="css/main.css">
+    <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="css/course_List.css">
+
+
+    </head>
+    <body onload="load()">
+        
+        <div class="limiter"  style="background-image: url('images/bg-01.jpg'); ">
+            <div class="top-bar"> <center>Profile Page</center>
+            
+            </div>
+            <div class="container-login100" > 
+                <button class="login100-form-btn" style="position: relative; left: 550px; top: -265px; will-change: top, left;">
+                            Register Courses
+                        </button>
+                    
+                <div class="wrap-courselist">
+                    
+                </div>
+                <div style="padding-top: 150px; font-weight: bold; font-size:110%; left: 0%;" class="course-display">
+                    <ul class="course-list"></ul>
+                </div>
+            </div>
+        </div>
+        
+
+        <div id="dropDownSelect1"></div>
+        
+    <!--===============================================================================================-->
+        <script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+    <!--===============================================================================================-->
+        <script src="vendor/animsition/js/animsition.min.js"></script>
+    <!--===============================================================================================-->
+        <script src="vendor/bootstrap/js/popper.js"></script>
+        <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+    <!--===============================================================================================-->
+        <script src="vendor/select2/select2.min.js"></script>
+    <!--===============================================================================================-->
+        <script src="vendor/daterangepicker/moment.min.js"></script>
+        <script src="vendor/daterangepicker/daterangepicker.js"></script>
+    <!--===============================================================================================-->
+        <script src="vendor/countdowntime/countdowntime.js"></script>
+    <!--===============================================================================================-->
+            
+    <!-- Code injected by live-server -->
+    <script type="text/javascript">
+        // <![CDATA[  <-- For SVG support
+        if ('WebSocket' in window) {
+            (function () {
+                function refreshCSS() {
+                    var sheets = [].slice.call(document.getElementsByTagName("link"));
+                    var head = document.getElementsByTagName("head")[0];
+                    for (var i = 0; i < sheets.length; ++i) {
+                        var elem = sheets[i];
+                        head.removeChild(elem);
+                        var rel = elem.rel;
+                        if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+                            var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+                            elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+                        }
+                        head.appendChild(elem);
+                    }
+                }
+                var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+                var address = protocol + window.location.host + window.location.pathname + '/ws';
+                var socket = new WebSocket(address);
+                socket.onmessage = function (msg) {
+                    if (msg.data == 'reload') window.location.reload();
+                    else if (msg.data == 'refreshcss') refreshCSS();
+                };
+                if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+                    console.log('Live reload enabled.');
+                    sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+                }
+            })();
+        }
+        else {
+            console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+        }
+        // ]]>
+    </script></body>
+    </html>
