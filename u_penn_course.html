@@ -32,7 +32,11 @@
     <body onload="load()">
         
         <div class="limiter"  style="background-image: url('images/bg-01.jpg'); ">
-            <div class="top-bar"></div>
+            <div class="top-bar">
+                    <table>
+                        <tr><td>My Center</td></tr>
+                    </table>
+            </div>
             <div class="container-login100" >
                 <div class="wrap-courselist">
                     <table style="color: #b224ef; cursor: pointer;"> 
@@ -40,8 +44,8 @@
                         
                     </table>
                 </div>
-                <div style="padding-top: 150px; font-weight: bold; font-size:110%; left: 0%;" class="course-display">
-                    <ul class="course-list"></ul>
+                <div style="margin-top: 150px; font-weight: bold; font-size:110%; left: 0%;" class="course-display">
+                    <ul class="course-list" style="cursor: pointer;"></ul>
                 </div>
             </div>
         </div>
@@ -82,8 +86,30 @@
             function load(){
                 $.each(u_of_pensylvania_course.cis, function(index, value){
                     var li = $('<li>'+value+'</li>').appendTo('.course-list');
+                    li.on("click", function(){
+                        
+                    })
                 })
             }
+
+            $('td[name=cis_penn]').click(function(){
+                $('.course-list').empty();
+                $.each(u_of_pensylvania_course.cis, function(index, value){
+                    var li = $('<li>'+value+'</li>').appendTo('.course-list');
+                    li.on("click", function(){
+                        
+                    })
+                })
+            });
+            $('td[name=cit_penn]').click(function(){
+                $('.course-list').empty();
+                $.each(u_of_pensylvania_course.cit, function(index, value){
+                    var li = $('<li>'+value+'</li>').appendTo('.course-list');
+                    li.on("click", function(){
+                        
+                    })  
+                })
+            });
         </script>    
        
     </body>

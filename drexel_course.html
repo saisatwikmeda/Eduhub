@@ -32,7 +32,11 @@
     <body onload="load()">
         
         <div class="limiter"  style="background-image: url('images/bg-01.jpg'); ">
-            <div class="top-bar"></div>
+            <div class="top-bar">
+                <table>
+                    <tr><td>My Center</td></tr>
+                </table>
+            </div>
             <div class="container-login100" >
                 <div class="wrap-courselist">
                     <table style="color: #b224ef; cursor: pointer;"> 
@@ -42,7 +46,7 @@
                             <td name="se">SOFTWARE ENGINEERING</td><td name="uwc">UNIVERSITY-WIDE COURSES</td></tr>
                     </table>
                 </div>
-                <div style="padding-top: 200px; font-weight: bold; font-size:110%; left: 0%;" class="course-display">
+                <div style="margin-top: 200px; font-weight: bold; font-size:110%; left: 0%;" class="course-display">
                     <ul class="course-list"></ul>
                 </div>
             </div>
@@ -84,8 +88,84 @@
             function load(){
                 $.each(drexel_u_course.cs, function(index, value){
                     var li = $('<li>'+value+'</li>').appendTo('.course-list');
+                    li.on("click", function(){
+                        
+                    })
                 })
             }
+
+            $('td[name=cs]').click(function(){
+                $('.course-list').empty();
+                $.each(drexel_u_course.cs, function(index, value){
+                    var li = $('<li>'+value+'</li>').appendTo('.course-list');
+                    li.on("click", function(){
+                        
+                    })
+                })
+            })
+            $('td[name=ct]').click(function(){
+                $('.course-list').empty();
+                $.each(drexel_u_course.ct, function(index, value){
+                    var li = $('<li>'+value+'</li>').appendTo('.course-list');
+                    li.on("click", function(){
+                        
+                    })
+                })
+            })
+            $('td[name=ci]').click(function(){
+                $('.course-list').empty();
+                $.each(drexel_u_course.ci, function(index, value){
+                    var li = $('<li>'+value+'</li>').appendTo('.course-list');
+                    li.on("click", function(){
+                        
+                    })
+                })
+            })
+            $('td[name=ds]').click(function(){
+                $('.course-list').empty();
+                $.each(drexel_u_course.ds, function(index, value){
+                    var li = $('<li>'+value+'</li>').appendTo('.course-list');
+                    li.on("click", function(){
+                        
+                    })
+                })
+            })
+            $('td[name=hsm]').click(function(){
+                $('.course-list').empty();
+                $.each(drexel_u_course.hsm, function(index, value){
+                    var li = $('<li>'+value+'</li>').appendTo('.course-list');
+                    li.on("click", function(){
+                        
+                    })
+                })
+            })
+            $('td[name=iss]').click(function(){
+                $('.course-list').empty();
+                $.each(drexel_u_course.iss, function(index, value){
+                    var li = $('<li>'+value+'</li>').appendTo('.course-list');
+                    li.on("click", function(){
+                        
+                    })
+                })
+            })
+            $('td[name=se]').click(function(){
+                $('.course-list').empty();
+                $.each(drexel_u_course.se, function(index, value){
+                    var li = $('<li>'+value+'</li>').appendTo('.course-list');
+                    li.on("click", function(){
+                        
+                    })
+                })
+            })
+            $('td[name=uwc]').click(function(){
+                $('.course-list').empty();
+                $.each(drexel_u_course.uwc, function(index, value){
+                    var li = $('<li>'+value+'</li>').appendTo('.course-list');
+                    li.on("click", function(){
+                        
+                    })
+                })
+            })
         </script>    
        
     </body>
