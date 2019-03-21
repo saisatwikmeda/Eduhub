@@ -1,6 +1,6 @@
 
 <head>
-        <title>Computer Science</title>
+        <title>>COMPUTER AND INFORMATION SCIENCE U PENN</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
     <!--===============================================================================================-->	
@@ -36,13 +36,11 @@
             <div class="container-login100" >
                 <div class="wrap-courselist">
                     <table style="color: #b224ef; cursor: pointer;"> 
-                        <tr><td name="cs">COMPUTER SCIENCE</td><td name="ct">COMPUTING TECHNOLOGY</td>
-                            <td name="ci">COMPUTING AND INFORMATICS</td><td name="ds">DATA SCIENCE</td></tr>
-                        <tr><td name="hsm">HOMELAND SECURITY MGMT</td><td name="iss">INFORMATION SCIENCE & SYSTEM</td>
-                            <td name="se">SOFTWARE ENGINEERING</td><td name="uwc">UNIVERSITY-WIDE COURSES</td></tr>
+                        <tr><td name="cis_penn">COMPUTER AND INFORMATION SCIENCE</td><td name="cit_penn">COMPUTER AND INFORMATION TECHNOLOGY</td></tr>
+                        
                     </table>
                 </div>
-                <div style="padding-top: 200px; font-weight: bold; font-size:110%; left: 0%;" class="course-display">
+                <div style="padding-top: 150px; font-weight: bold; font-size:110%; left: 0%;" class="course-display">
                     <ul class="course-list"></ul>
                 </div>
             </div>
@@ -82,7 +80,7 @@
             "cit":["CIT590-Programming Languages and Techniques","CIT591-Introduction to Software Development","CIT592-Mathematical Foundations of Computer Science","CIT593-Introduction to Computer Systems","CIT594-Data Structures and Sofware Design","CIT595-Computer Systems Programming","CIT596-Algorithms and Computation"],
             };
             function load(){
-                $.each(drexel_u_course.cs, function(index, value){
+                $.each(u_of_pensylvania_course.cis, function(index, value){
                     var li = $('<li>'+value+'</li>').appendTo('.course-list');
                 })
             }
