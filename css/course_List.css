@@ -1,0 +1,12 @@
+td{
+    padding-left: 50px;
+    padding-right: 50px;
+    border-style: solid;
+    border-color: #b224ef;
+}
+
+.top-bar{
+    height: 30px;
+    top:0;
+    background: #b224ef;
+}
