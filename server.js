@@ -2,9 +2,9 @@ var express = require("express");
 var mysql = require('mysql');
 var app = express();
 var bodyParser = require('body-parser');
-app.use(express.static('.'));
+
 app.use(bodyParser.json()); // support json encoded bodies
-app.use(bodyParser.urlencoded({ extended: false })); // support encoded bodies
+app.use(bodyParser.urlencoded({ extended: true })); // support encoded bodies
    
 var con = mysql.createConnection({
   host: 'localhost',
@@ -18,51 +18,52 @@ app.use(function(req, res, next){
     res.header('Access-Control-Allow-Headers', 'Content-Type');
     next();
 });
-
 con.connect(function(err) {
   if (err) {
-  console.log(err);
+  console.log('Error connecting to database');
   }
   else {
   console.log('Database successfully connected');
   }
 });
 
-
-app.get('/login',function(req,res){
-    var username = req.query.username;
-    var password = req.query.password;
-    console.log(username+' '+password);
-    //res.send({'status':'ok'});
-    con.query('SELECT password FROM student WHERE username ='+'\"'+username+'\";',
+/*app.post('/login',function(req, res){
+    var username = req.body.username;
+    var password = req.body.password;
+    res.end('ok');
+    /*con.query('SELECT password FROM students WHERE username ='+'\"'+username+'\";',
         function(err, rows, fields){
             if(err){
                 console.log(err);
             } else{
-                //console.log(rows.password);
-               
-                res.send({"login":"ok"});
+                res.redirect('http://localhost:8080/HomePage.html');
             }
         });
+*/
+//});
+
+app.post('login',function(req,res){
+    res.end('ok');
 });
 
 
 
-app.get('/signup',function(req, res){
-    var username = req.query.username;
-    var password = req.query.password;
-    var email = req.query.email;
-    var university = req.query.university;
-    con.query('INSERT INTO student (Username, Password, Email, University) VALUES '
+app.post('/signup',function(req, res){
+    var username = req.body.username;
+    var password = req.body.password;
+    var email = req.body.email;
+    var university = req.body.university;
+
+    con.query('INSERT INTO students (Username, Password, Email, University) VALUES '
         + '(\"'+username+'\",'+ '\"'+password+'\",'+'\"'+email+'\",'+'\"'+university+'\");',
         function(err, rows, fields){
             if(err){
                 console.log(err);
             } else{
-                //res.redirect('http://192.168.80.1:8081/HomePage.html');
-                res.send({'complete':"ok"});
+                res.redirect('http://localhost:8080/HomePage.html');
             }
-    });
+        });
+
 
 });
 

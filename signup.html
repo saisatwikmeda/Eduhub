@@ -118,14 +118,21 @@
 				var signup = {'username':username, 'password':password, 'email':email, 'university':university};
 				var URL = "/signup";
 				$.ajax({
-					type: 'POST',
-					url: URL,
-					data: signup,
-					dataType: "text",
-					success: function(resultData) { alert("Save Complete") }
-				});
-		    }
-		})
+                     type: "GET",
+                     url: 'http://localhost:8080/signup',
+                     contentType:"application/json; charset=utf-8",
+                     data: signup,
+                     dataType: "jsonp",
+                     success: function(msg){
+												 //$('#display').html(msg);
+												 
+                     },
+                     error: function(xhr, ajaxOptions, thrownError){
+                         alert('html');
+                     }
+								 });
+								}
+		});
 	</script>
 
 </body>
