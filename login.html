@@ -1,5 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
+
 <head>
 	<title>Login</title>
 	<meta charset="UTF-8">
@@ -42,12 +41,12 @@
 					</span>
 
 					<div class="wrap-input100 validate-input" data-validate = "Enter username">
-						<input class="input100" type="text" name="usernameL" placeholder="Username">
+						<input class="input100" type="text" id="usernameL" placeholder="Username">
 						<span class="focus-input100" data-placeholder="&#xf207;"></span>
 					</div>
 
 					<div class="wrap-input100 validate-input" data-validate="Enter password">
-						<input class="input100" type="password" name="passL" placeholder="Password">
+						<input class="input100" type="password" id="passL" placeholder="Password">
 						<span class="focus-input100" data-placeholder="&#xf191;"></span>
 					</div>
 
@@ -94,8 +93,18 @@
 <!--===============================================================================================-->
 	<script>
 		$("button").click(function(){
-			
-		})
+			var username = $('#usernameL').val();
+			var password = $('#passL').val();
+			var authen = {'username':username, 'password':password};
+			var URL = "/login";
+        $.ajax({
+				type: 'POST',
+				url: URL,
+				data: authen,
+				dataType: "text",
+				success: function(resultData) { alert("Save Complete") }
+		    });
+		});
 	</script>
 
 </body>
