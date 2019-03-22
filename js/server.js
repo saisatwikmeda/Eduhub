@@ -34,18 +34,22 @@ app.get('/login',function(req,res){
     var password = req.query.password;
     console.log(username+' '+password);
     //res.send({'status':'ok'});
-    con.query('SELECT password FROM student WHERE username ='+'\"'+username+'\";',
+    con.query('SELECT password FROM students WHERE username ='+'\"'+username+'\";',
         function(err, rows, fields){
             if(err){
                 console.log(err);
             } else{
                 //console.log(rows.password);
-               
-                res.send({"login":"ok"});
+                res.redirect('/HomePage');
+                //res.send({"login":"ok"});
             }
         });
+        //res.send({"login":"ok"});
 });
-
+app.get('/Homepage',function(req,res){
+    console.log("homepage");
+    res.open("../HomePage.html");
+})
 
 
 app.get('/signup',function(req, res){
@@ -53,13 +57,13 @@ app.get('/signup',function(req, res){
     var password = req.query.password;
     var email = req.query.email;
     var university = req.query.university;
-    con.query('INSERT INTO student (Username, Password, Email, University) VALUES '
+    con.query('INSERT INTO students (Username, Password, Email, University) VALUES '
         + '(\"'+username+'\",'+ '\"'+password+'\",'+'\"'+email+'\",'+'\"'+university+'\");',
         function(err, rows, fields){
             if(err){
                 console.log(err);
             } else{
-                //res.redirect('http://192.168.80.1:8081/HomePage.html');
+                //res.redirect('hHomePage.html');
                 res.send({'complete':"ok"});
             }
     });
