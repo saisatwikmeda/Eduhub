@@ -64,8 +64,8 @@
 					</div>
 
 					<div class="text-center p-t-90">
-						<a class="txt1" href="#">
-							Forgot Password?
+						<a class="txt1" href="http://192.168.80.1:8081/HomePage.html">
+							
 						</a>
 					</div>
 				</form>
@@ -95,15 +95,23 @@
 		$("button").click(function(){
 			var username = $('#usernameL').val();
 			var password = $('#passL').val();
-			var authen = {'username':username, 'password':password};
-			var URL = "/login";
-        $.ajax({
-				type: 'POST',
-				url: URL,
-				data: authen,
-				dataType: "text",
-				success: function(resultData) { alert("Save Complete") }
-		    });
+			var data = {'username':username, 'password':password};
+			var URL = "http://localhost:8080/login";
+			$.ajax({
+                     type: "GET",
+                     url: 'http://localhost:8080/login',
+                     contentType:"application/json; charset=utf-8",
+                     data: data,
+                     dataType: "jsonp",
+                     success: function(msg){
+												 //$('#display').html(msg);
+												 
+                     },
+                     error: function(xhr, ajaxOptions, thrownError){
+                         alert('html');
+                     }
+			 });
+					
 		});
 	</script>
 
