@@ -42,27 +42,27 @@
 					</span>
 
 					<div class="wrap-input100 validate-input" data-validate = "Enter username">
-						<input class="input100" type="text" name="username_S" placeholder="Username">
+						<input class="input100" required="required" type="text" id="username_S" placeholder="Username">
 						<span class="focus-input100" data-placeholder="&#xf207;"></span>
 					</div>
 
 					<div class="wrap-input100 validate-input" data-validate="Enter password">
-						<input class="input100" type="password" name="pass_S" placeholder="Password">
+						<input class="input100" required="required" type="password" id="pass_S" placeholder="Password">
 						<span class="focus-input100" data-placeholder="&#xf191;"></span>
 					</div>
 
 					<div class="wrap-input100 validate-input" data-validate="Enter password">
-							<input class="input100" type="password" name="repass_S" placeholder="Re-Password">
+							<input class="input100" required="required" type="password" id="repass_S" placeholder="Re-Password">
 							<span class="focus-input100" data-placeholder="&#xf191;"></span>
 					</div>
 					
 					<div class="wrap-input100 validate-input" data-validate="Enter password">
-						<input class="input100" type="email" name="email_S" placeholder="Email">
+						<input class="input100" required="required" type="email" id="email_S" placeholder="Email">
 						<span class="focus-input100" data-placeholder="&#xf15a;"></span>
 					</div>
 
 					<div class="wrap-input100 validate-input" data-validate="Enter password">
-						<select class="input100-select" name="university_S" data-placeholder="&#xf299;">
+						<select class="input100-select" id="university_S" data-placeholder="&#xf299;">
 							<option class="input100-select" style="background: #9152f8" value="Drexel_U">Drexel University</option>
 							<option class="input100-select" style="background: #9152f8" value="Pennsylvania_U">University of Pennsylvania</option>
 						</select>
@@ -74,7 +74,8 @@
 							Sign Up
 						</button>
 					</div>
-
+					<div id="reminder">
+					</div>
 					<div class="text-center p-t-90">
 						<a class="txt1" href="">
 							Already have an account? Go to Login!
@@ -105,7 +106,25 @@
 <!--===============================================================================================-->
 	<script>
 		$("button").click(function(){
-			
+			var username = $('#username_S').val();
+			var password = $('#pass_S').val();
+			var repass = $('#repass_S').val();
+			var email = $('#email_S').val();
+			var university = $('#university_S').val();
+
+			if(password != repass){
+				alert("Please re-enter the correct password");
+			}else{
+				var signup = {'username':username, 'password':password, 'email':email, 'university':university};
+				var URL = "/signup";
+				$.ajax({
+					type: 'POST',
+					url: URL,
+					data: signup,
+					dataType: "text",
+					success: function(resultData) { alert("Save Complete") }
+				});
+		    }
 		})
 	</script>
 
