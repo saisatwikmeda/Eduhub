@@ -1,0 +1,116 @@
+<html>
+<head>
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+<!------ Include the above in your HEAD tag ---------->
+</head>
+<body>
+<div style="margin-top: 20px;" class="container emp-profile">
+            <form method="post">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="profile-img">
+                            <img src="images/icons/user-icon.png" height="100" width="150" style="margin-bottom: 10px" alt=""/><br/>
+                            <div class="file btn btn-lg btn-primary">
+                                Change Photo
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="profile-head">
+                                    <h5>
+                                        <%= name %>
+                                    </h5>
+                                    <h6 style="font-weight: bold;">
+                                        <i class="fas fa-graduation-cap"></i> <%= university%>
+                                    </h6>
+                                    <p class="proile-CGA" style="font-weight: bold;">
+                                        <%if(CGA >= 3) {%>
+                                            <i class="fas fa-smile-wink"></i>
+                                        <%} else if(CGA >= 2) {%>
+                                            <i class="fas fa-smile"></i>
+                                        <%} else {%>
+                                            <i class="fas fa-sad-tear"></i>
+                                        <%}%>
+                                        CGA: <%= CGA%></p>
+                            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                <li class="nav-item">
+                                    <a class="nav-link active" id="home-tab" data-toggle="tab" role="tab" aria-controls="home" aria-selected="true">Finished Courses</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" id="profile-tab" data-toggle="tab" role="tab" aria-controls="profile" aria-selected="false">Courses On Progress</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <input type="submit" class="profile-edit-btn" name="btnAddMore" value="Edit Profile"/>
+                        <button id="add_course">Add Courses</button>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="profile-work">
+                            <p>Information</p>
+                            <div><i class="far fa-user"></i> Username</div>
+                            <span><%= username%></span>
+                            <div><i class="far fa-envelope"></i> Email</div>
+                            <span><%= email%></span>
+                            
+                        </div>
+                    </div>
+                    <div class="col-md-8">
+                        <div class="tab-content profile-tab" id="myTabContent">
+                            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label>User Id</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p>Kshiti123</p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label>Name</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p>Kshiti Ghelani</p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label>Email</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p>kshitighelani@gmail.com</p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label>Phone</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p>123 456 7890</p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label>Profession</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p>Web Developer and Designer</p>
+                                            </div>
+                                        </div>
+                            </div>
+                            
+                            
+                        </div>
+                    </div>
+                </div>
+            </form>           
+        </div>
+    </body>
+</html>
